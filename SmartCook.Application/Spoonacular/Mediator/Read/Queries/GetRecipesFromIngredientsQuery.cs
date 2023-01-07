@@ -6,8 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartCook.Application.Spoonacular.Read.Queries
+namespace SmartCook.Application.Spoonacular.Mediator.Read.Queries
 {
-    public record GetRandomRecipesQuery() : IRequest<List<Recipes>>;
+    public record GetRecipesFromIngredientsQuery(string[] ingredients) : IRequest<List<Recipes>>;
 
 }

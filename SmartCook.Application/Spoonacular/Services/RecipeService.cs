@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using SmartCook.Application.Spoonacular.Interfaces;
-using SmartCook.Application.Spoonacular.Read.Queries;
+using SmartCook.Application.Spoonacular.Mediator.Read.Queries;
 using SmartCook.Domain.Entities;
 using System;
 using System.Collections.Generic;

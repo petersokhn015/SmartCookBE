@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using SmartCook.Application.Spoonacular.Interfaces;
-using SmartCook.Application.Spoonacular.Read.Queries;
+using SmartCook.Application.Spoonacular.Mediator.Read.Queries;
 using SmartCook.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartCook.Application.Spoonacular.Read.Handlers
+namespace SmartCook.Application.Spoonacular.Mediator.Read.Handlers
 {
     public class GetRandomRecipesHandler : IRequestHandler<GetRandomRecipesQuery, List<Recipes>>
     {
