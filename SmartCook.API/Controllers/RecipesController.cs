@@ -22,6 +22,12 @@ namespace SmartCook.API.Controllers
             return Ok(await _service.GetRandomRecipes());
         }
 
+        [HttpGet("GetRecipesByTime")]
+        public async Task<ActionResult<List<Recipes>>> GetRecipesByTime(string tags)
+        {
+            return Ok(await _service.GetRecipesByTime(tags));
+        }
+
         [HttpPost("RecipeByIngredient")]
         public async Task<ActionResult<List<Recipes>>> GetRecipesFromIngredients(string[] ingredients)
         {

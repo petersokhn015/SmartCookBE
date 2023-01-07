@@ -26,5 +26,10 @@ namespace SmartCook.Application.Spoonacular.Services
         {
             return _mediator.Send(new GetRecipesFromIngredientsQuery(ingredients));
         }
+
+        public Task<List<Recipes>> GetRecipesByTime(string tags)
+        {
+            return _mediator.Send(new GetRecipesByTimeQuery(tags));
+        }
     }
 }

@@ -12,6 +12,6 @@ namespace SmartCook.Infrastructure.Spoonacular
         public static string SpoonacularSecret = "03f7fd19fd3e438cb751fa3523af01e0";
         public static string GetRandomRecipesUrl = $"{SpoonacularBaseUrl}random?apiKey={SpoonacularSecret}&number=3";
         public static string GetRecipesByIngredients = $"{SpoonacularBaseUrl}findByIngredients?apiKey={SpoonacularSecret}&ingredients=";
-
+        public static string GetRecipesByTime = $"{SpoonacularBaseUrl}random?apiKey={SpoonacularSecret}&number=5&tags=";
     }
 }
