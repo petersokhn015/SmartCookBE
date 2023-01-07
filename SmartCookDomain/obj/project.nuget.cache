@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YX7uRX96E/kND2jyIFai7ZLhp5FWgultcRQPsBqmAdeUx8yEUlXZKWRdSjKRs8od0SCPfM+6adbxdSy43cn6ZQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\peter\\OneDrive\\Documents\\GitHub\\SmartCookBE\\SmartCookDomain\\SmartCook.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\peter\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

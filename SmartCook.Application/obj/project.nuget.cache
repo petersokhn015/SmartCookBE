@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "e/jntg+lJHW2bEXt3Kw8fFmzbqWIJKrrmx9e2mVhKkpnMqYOfJXV6nyd6jJmMD62aplNNUGzeheI/oEe6efyIw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\peter\\OneDrive\\Documents\\GitHub\\SmartCookBE\\SmartCook.Application\\SmartCook.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\peter\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\peter\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\peter\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "rRJ+z7kHev69DmY2UT/9aRKgR52RocdwQCJxE4b5ZYo=",
+  "Source": "SmartCook.API",
+  "BasePath": "_content/SmartCook.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
