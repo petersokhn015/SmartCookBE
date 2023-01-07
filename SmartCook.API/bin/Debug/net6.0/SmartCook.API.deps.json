@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "SmartCook.API/1.0.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "SmartCook.Application": "1.0.0",
           "SmartCook.Infrastructure": "1.0.0",
@@ -15,6 +16,29 @@
         },
         "runtime": {
           "SmartCook.API.dll": {}
+        }
+      },
+      "AutoMapper/12.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.0.0"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.0": {
+        "dependencies": {
+          "AutoMapper": "12.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.0.0"
+          }
         }
       },
       "MediatR/11.1.0": {
@@ -48,6 +72,7 @@
           }
         }
       },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
       "Microsoft.Extensions.Configuration.Abstractions/7.0.0": {
         "dependencies": {
@@ -72,6 +97,12 @@
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {},
+      "Microsoft.Extensions.Options/6.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        }
+      },
       "Microsoft.Extensions.Primitives/7.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -140,6 +171,7 @@
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "SmartCook.Application/1.0.0": {
         "dependencies": {
+          "AutoMapper": "12.0.0",
           "MediatR": "11.1.0",
           "SmartCook.Domain": "1.0.0"
         },
@@ -173,6 +205,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/12.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Rmg0zI5AFu1O/y//o9VGyhxKjhggWpk9mOA1tp0DEVx40c61bs+lnQv+0jUq8XbniF7FKgIVvI1perqiMtLrA==",
+      "path": "automapper/12.0.0",
+      "hashPath": "automapper.12.0.0.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XCJ4E3oKrbRl1qY9Mr+7uyC0xZj1+bqQjmQRWTiTKiVuuXTny+7YFWHi20tPjwkMukLbicN6yGlDy5PZ4wyi1w==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.0",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512"
+    },
     "MediatR/11.1.0": {
       "type": "package",
       "serviceable": true,
@@ -193,6 +239,13 @@
       "sha512": "sha512-jfD2NBYvP+HiUil2DWfM4bn+bCLp4H2xvoc9aorcnn2Jpgz7Ey8RyYMpgqeF3bs6CP6t8pzb6WkF5NFF/1RLHA==",
       "path": "mediatr.extensions.microsoft.dependencyinjection/11.0.0",
       "hashPath": "mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",
@@ -221,6 +274,13 @@
       "sha512": "sha512-xlzi2IYREJH3/m6+lUrQlujzX8wDitm4QGnUu6kUXTQAWPuZY8i+ticFJbzfqaetLA6KR/rO6Ew/HuYD+bxifg==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dzXN0+V1AyjOe2xcJ86Qbo233KHuLEY0njf/P2Kw8SfJU+d45HNS2ctJdnEnrWbM9Ye2eFgaC5Mj9otRMU6IsQ==",
+      "path": "microsoft.extensions.options/6.0.0",
+      "hashPath": "microsoft.extensions.options.6.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/7.0.0": {
       "type": "package",

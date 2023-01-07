@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SmartCook.Application.Spoonacular.Interfaces;
 using SmartCook.Domain.Entities;
+using SmartCook.Domain.Entities.RecipeDetails;
 
 namespace SmartCook.API.Controllers
 {
@@ -26,6 +27,12 @@ namespace SmartCook.API.Controllers
         public async Task<ActionResult<List<Recipes>>> GetRecipesByTimeOfDay(string tags)
         {
             return Ok(await _service.GetRecipesByTime(tags));
+        }
+
+        [HttpGet("GetRecipeDetails")]
+        public async Task<ActionResult<DetailedRecipe>> GetRecipeDetails(int recipeId)
+        {
+            return Ok(await _service.GetRecipeDetails(recipeId));
         }
 
         [HttpPost("RecipeByIngredient")]

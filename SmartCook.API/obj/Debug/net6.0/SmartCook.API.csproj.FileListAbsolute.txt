@@ -88,3 +88,5 @@ C:\Users\peter\OneDrive\Documents\GitHub\SmartCookBE\SmartCook.API\obj\Debug\net
 C:\Users\peter\OneDrive\Documents\GitHub\SmartCookBE\SmartCook.API\obj\Debug\net6.0\SmartCook.API.pdb
 C:\Users\peter\OneDrive\Documents\GitHub\SmartCookBE\SmartCook.API\obj\Debug\net6.0\SmartCook.API.genruntimeconfig.cache
 C:\Users\peter\OneDrive\Documents\GitHub\SmartCookBE\SmartCook.API\obj\Debug\net6.0\ref\SmartCook.API.dll
+C:\Users\peter\OneDrive\Documents\GitHub\SmartCookBE\SmartCook.API\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\peter\OneDrive\Documents\GitHub\SmartCookBE\SmartCook.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

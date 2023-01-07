@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using SmartCook.Domain.Entities.RecipeDetails;
 
 namespace SmartCook.Infrastructure.Spoonacular.Repositories
 {
@@ -82,6 +83,27 @@ namespace SmartCook.Infrastructure.Spoonacular.Repositories
                 Console.WriteLine(e.ToString());
             }
             return recipes;
+        }
+
+        public async Task<AnalysedRecipe> GetRecipeInfo(int recipeId)
+        {
+            AnalysedRecipe recipe = new();
+            try
+            {
+                var response = await _client.GetAsync(new Uri(Constants.SpoonacularBaseUrl+recipeId+Constants.GetRecipeInfoByIdContinued));
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    recipe = JsonConvert.DeserializeObject<AnalysedRecipe>(apiResponse)!;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            return recipe;
+
         }
 
     }

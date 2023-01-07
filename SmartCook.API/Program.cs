@@ -1,5 +1,6 @@
 using MediatR;
 using SmartCook.Application.Spoonacular.Interfaces;
+using SmartCook.Application.Spoonacular.Mapper;
 using SmartCook.Application.Spoonacular.Services;
 using SmartCook.Infrastructure.Spoonacular.Repositories;
 
@@ -12,6 +13,7 @@ builder.Services.AddScoped<IRecipeService, RecipeService>();
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
 
 builder.Services.AddMediatR(typeof(RecipeRepository).Assembly, typeof(RecipeService).Assembly);
+builder.Services.AddAutoMapper(typeof(FromAnalyzedToDetailedRecipesProfile));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

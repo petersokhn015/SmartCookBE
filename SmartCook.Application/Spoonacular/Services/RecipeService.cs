@@ -2,6 +2,7 @@
 using SmartCook.Application.Spoonacular.Interfaces;
 using SmartCook.Application.Spoonacular.Mediator.Read.Queries;
 using SmartCook.Domain.Entities;
+using SmartCook.Domain.Entities.RecipeDetails;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,11 @@ namespace SmartCook.Application.Spoonacular.Services
         public Task<List<Recipes>> GetRecipeByIngredients(string[] ingredients)
         {
             return _mediator.Send(new GetRecipesFromIngredientsQuery(ingredients));
+        }
+
+        public Task<DetailedRecipe> GetRecipeDetails(int recipeId)
+        {
+            return _mediator.Send(new GetRecipeDetailsQuery(recipeId));
         }
 
         public Task<List<Recipes>> GetRecipesByTime(string tags)
