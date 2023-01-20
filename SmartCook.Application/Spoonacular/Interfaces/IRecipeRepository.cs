@@ -13,6 +13,7 @@ namespace SmartCook.Application.Spoonacular.Interfaces
         Task<List<Recipes>> GetRandomRecipes();
         Task<List<Recipes>> GetRecipeByIngredients(string[] ingredients);
         Task<AnalysedRecipe> GetRecipeInfo(int recipeID);
+        Task<List<Recipes>> GetRecommendedRecipes(int[] recipeIds);
         Task<List<Recipes>> GetRecipesByTime(string tags);
     }
 }

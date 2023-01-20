@@ -35,6 +35,12 @@ namespace SmartCook.API.Controllers
             return Ok(await _service.GetRecipeDetails(recipeId));
         }
 
+        [HttpPost("GetRecommendedRecipes")]
+        public async Task<ActionResult<DetailedRecipe>> GetRecommendedRecipes(int[] recipeIds)
+        {
+            return Ok(await _service.GetRecommendedRecipes(recipeIds));
+        }
+
         [HttpPost("RecipeByIngredient")]
         public async Task<ActionResult<List<Recipes>>> GetRecipesFromIngredients(string[] ingredients)
         {
