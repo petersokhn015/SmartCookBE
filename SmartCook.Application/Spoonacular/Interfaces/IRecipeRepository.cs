@@ -1,5 +1,5 @@
-﻿using SmartCook.Domain.Entities;
-using SmartCook.Domain.Entities.RecipeDetails;
+﻿using SmartCook.Domain.SpoonacularEntities;
+using SmartCook.Domain.SpoonacularEntities.RecipeDetails;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +15,6 @@ namespace SmartCook.Application.Spoonacular.Interfaces
         Task<AnalysedRecipe> GetRecipeInfo(int recipeID);
         Task<List<Recipes>> GetRecommendedRecipes(int[] recipeIds);
         Task<List<Recipes>> GetRecipesByTime(string tags);
+        Task<List<Recipes>> GetRecipesByCuisineType(string cuisineType);
     }
 }

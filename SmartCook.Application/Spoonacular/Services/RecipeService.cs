@@ -1,8 +1,8 @@
 ﻿using MediatR;
+using SmartCook.Application.Mediator.Queries.Spoonacular;
 using SmartCook.Application.Spoonacular.Interfaces;
-using SmartCook.Application.Spoonacular.Mediator.Read.Queries;
-using SmartCook.Domain.Entities;
-using SmartCook.Domain.Entities.RecipeDetails;
+using SmartCook.Domain.SpoonacularEntities;
+using SmartCook.Domain.SpoonacularEntities.RecipeDetails;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +41,10 @@ namespace SmartCook.Application.Spoonacular.Services
         public Task<List<Recipes>> GetRecipesByTime(string tags)
         {
             return _mediator.Send(new GetRecipesByTimeQuery(tags));
+        }
+        public Task<List<Recipes>> GetRecipesByCuisineType(string tags)
+        {
+            return _mediator.Send(new GetRecipesByCuisineTypeQuery(tags));
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using SmartCook.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +16,7 @@ namespace SmartCook.Infrastructure.Spoonacular
         public static string GetRecipeInfoByIdContinued = $"/information?apiKey={SpoonacularSecret}&includeNutrition=true";
         public static string GetSimilarRecipeContinued = $"/similar?apiKey={SpoonacularSecret}&number=5";
         public static string GetRecipesByPreferences = $"{SpoonacularBaseUrl}complexSearch?apiKey={SpoonacularSecret}&number=5";
+        public static string GetRecipesByCuisineType = $"{SpoonacularBaseUrl}complexSearch?apiKey={SpoonacularSecret}&number=5&cuisine=";
 
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using SmartCook.Domain.Entities;
 using SmartCook.Application.Spoonacular.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using SmartCook.Domain.Entities.RecipeDetails;
 using System.Security.Cryptography;
+using SmartCook.Domain.SpoonacularEntities;
+using SmartCook.Domain.SpoonacularEntities.RecipeDetails;
 
 namespace SmartCook.Infrastructure.Spoonacular.Repositories
 {
@@ -75,6 +75,28 @@ namespace SmartCook.Infrastructure.Spoonacular.Repositories
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     var recipesData = JObject.Parse(apiResponse);
                     var recipeList = recipesData["recipes"];
+                    recipes = recipeList?.ToObject<List<Recipes>>()!;
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            return recipes;
+        }
+
+        public async Task<List<Recipes>> GetRecipesByCuisineType(string cuisineType)
+        {
+            List<Recipes> recipes = new();
+            try
+            {
+                var response = await _client.GetAsync(new Uri(Constants.GetRecipesByCuisineType + cuisineType));
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    var recipesData = JObject.Parse(apiResponse);
+                    var recipeList = recipesData["results"];
                     recipes = recipeList?.ToObject<List<Recipes>>()!;
                 }
 

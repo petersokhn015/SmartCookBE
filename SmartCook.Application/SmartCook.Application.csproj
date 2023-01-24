@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Spoonacular\Mediator\Write\Handlers\" />
-    <Folder Include="Spoonacular\Mediator\Write\Queries\" />
+    <Folder Include="Mediator\Handlers\Read\DBManipulation\" />
+    <Folder Include="Mediator\Handlers\Write\" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using SmartCook.Domain.Entities.RecipeDetails;
+using SmartCook.Domain.SpoonacularEntities.RecipeDetails;
 using System;
 using System.Collections.Generic;
 using System.Linq;
