@@ -74,12 +74,20 @@ namespace SmartCook.Infrastructure.Spoonacular.Repositories
             return recipes;
         }
 
-        public async Task<List<Recipes>> GetRecipesByTime(string tag)
+        public async Task<List<Recipes>> GetRecipesByTime(string userTime)
         {
             List<Recipes> recipes = new();
+            TimeOnly userTimeParsing = TimeOnly.Parse(userTime);
+            string meal = "";
+
+            if (userTimeParsing >= new TimeOnly(5, 0) && userTimeParsing < new TimeOnly(11, 0)) meal = "breakfast";
+            else if (userTimeParsing >= new TimeOnly(11, 0) && userTimeParsing < new TimeOnly(16, 0)) meal = "lunch";
+            else if (userTimeParsing >= new TimeOnly(16, 0) && userTimeParsing < new TimeOnly(18, 0)) meal = "dessert";
+            else meal = "dinner";
+
             try
             {
-                var response = await _client.GetAsync(new Uri(Constants.GetRecipesByTime+tag));
+                var response = await _client.GetAsync(new Uri(Constants.GetRecipesByTime+meal));
                 if (response.IsSuccessStatusCode)
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
