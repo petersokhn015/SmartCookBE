@@ -20,7 +20,7 @@ namespace SmartCook.Application.Mediator.Handlers.Read.Spoonacular
         }
         public Task<List<Recipes>> Handle(GetRecipesByTimeQuery request, CancellationToken cancellationToken)
         {
-            return _repository.GetRecipesByTime(request.tags);
+            return _repository.GetRecipesByTime(request.userTime);
         }
     }
 

@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 
 namespace SmartCook.Application.Mediator.Queries.Spoonacular
 {
-    public record GetRecipesByTimeQuery(string tags) : IRequest<List<Recipes>>;
+    public record GetRecipesByTimeQuery(string userTime) : IRequest<List<Recipes>>;
 
 }
