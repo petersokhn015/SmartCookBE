@@ -437,7 +437,9 @@
       "SmartCook.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.0",
+          "FluentValidation": "11.4.0",
           "MediatR": "11.1.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "SmartCook.Domain": "1.0.0"
         },
         "runtime": {

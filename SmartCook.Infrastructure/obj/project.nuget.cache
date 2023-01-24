@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "kTBFonf2ne6aVVGw8zD/E9YeM2UhVLxlbIfEtRtvOiX2BpitJIk9Qu5o1CjzbI2tNO2xNJeQLsQvATncMIE6yg==",
+  "dgSpecHash": "xTMCP2mDdHxNkpAIZ89WssdRKNTXQxkkZvrWJj5ZtAWmrTHV57/UYj8UJt2JvMu4tWz99uVg4Quj9NPKOLJHLg==",
   "success": true,
   "projectFilePath": "C:\\Users\\peter\\OneDrive\\Documents\\GitHub\\SmartCookBE\\SmartCook.Infrastructure\\SmartCook.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\peter\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\cloudinarydotnet\\1.20.0\\cloudinarydotnet.1.20.0.nupkg.sha512",
+    "C:\\Users\\peter\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

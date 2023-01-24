@@ -1,14 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "gpdqb8Knz5jYl1jLjqMHkOAXXjmEY/1WCAvxH/nyEHAp08I0c7dsAOpETmQF+nHGShPXrSXkE8L18TZXvpjCmQ==",
+  "dgSpecHash": "AEPy81Nmhv4XQqxdHHHaPJfjJTPwrA0vm1spBt0JiQ+D1PrSG/bmGyAL1OFNcoH32hqr087Ice2T1Or2GbcK4Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\peter\\OneDrive\\Documents\\GitHub\\SmartCookBE\\SmartCook.Application\\SmartCook.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\peter\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\peter\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\peter\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\peter\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+    "C:\\Users\\peter\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\peter\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\peter\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

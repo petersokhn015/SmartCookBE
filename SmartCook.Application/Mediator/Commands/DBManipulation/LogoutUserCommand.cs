@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,5 @@ using System.Threading.Tasks;
 
 namespace SmartCook.Application.Mediator.Commands.DBManipulation
 {
-    internal class LogoutUserCommand
-    {
-    }
+    public record LogoutUserCommand(string email) : IRequest<bool>;
 }

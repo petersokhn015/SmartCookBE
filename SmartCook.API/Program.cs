@@ -8,6 +8,8 @@ using SmartCook.Application.Spoonacular.Interfaces;
 using SmartCook.Application.Spoonacular.Mapper;
 using SmartCook.Application.Spoonacular.Services;
 using SmartCook.Infrastructure.CloudinaryPhoto.Helpers;
+using SmartCook.Infrastructure.CloudinaryPhoto.Interface;
+using SmartCook.Infrastructure.CloudinaryPhoto.Service;
 using SmartCook.Infrastructure.DBManipulation.Data;
 using SmartCook.Infrastructure.DBManipulation.Repositories;
 using SmartCook.Infrastructure.Spoonacular.Repositories;
@@ -17,6 +19,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<ICloudinaryPhotoService, CloudinaryPhotoService>();
 
 builder.Services.AddScoped<IRecipeService, RecipeService>();
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
