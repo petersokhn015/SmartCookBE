@@ -20,7 +20,7 @@ namespace SmartCook.Application.Mediator.Handlers.Read.Spoonacular
 
         public async Task<List<Recipes>> Handle(GetRecommendedRecipesQuery request, CancellationToken cancellationToken)
         {
-            return await _repository.GetRecommendedRecipes(request.recipeIds);
+            return await _repository.GetRecommendedRecipes(request.email);
         }
     }
 }

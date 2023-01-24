@@ -30,7 +30,7 @@ namespace SmartCook.API.Controllers
         }
 
         [HttpGet("GetRecipeDetails")]
-        public async Task<ActionResult<DetailedRecipe>> GetRecipeDetails(int recipeId)
+        public async Task<ActionResult<DetailedRecipe>> GetRecipeDetails(long recipeId)
         {
             return Ok(await _service.GetRecipeDetails(recipeId));
         }
@@ -42,9 +42,9 @@ namespace SmartCook.API.Controllers
         }
 
         [HttpPost("GetRecommendedRecipes")]
-        public async Task<ActionResult<DetailedRecipe>> GetRecommendedRecipes(int[] recipeIds)
+        public async Task<ActionResult<List<Recipes>>> GetRecommendedRecipes(string email)
         {
-            return Ok(await _service.GetRecommendedRecipes(recipeIds));
+            return Ok(await _service.GetRecommendedRecipes(email));
         }
 
         [HttpPost("RecipeByIngredient")]

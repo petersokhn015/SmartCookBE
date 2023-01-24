@@ -35,8 +35,14 @@ builder.Services.AddScoped<IPreferencesService, PreferencesService>();
 builder.Services.AddScoped<IPreferencesRepository, PreferencesRepository>();
 
 builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
+
 builder.Services.AddMediatR(typeof(SmartCookApplicationMediatREndpoint).Assembly);
-builder.Services.AddAutoMapper(typeof(FromAnalyzedToDetailedRecipesProfile), typeof(DBRecipeProfile), typeof(UserProfile), typeof(PreferenceProfile));
+
+builder.Services.AddAutoMapper(typeof(FromAnalyzedToDetailedRecipesProfile), 
+    typeof(DBRecipeProfile), 
+    typeof(UserProfile), 
+    typeof(PreferenceProfile),
+    typeof(SpoonacularPreferencesProfile));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

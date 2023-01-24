@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 
 namespace SmartCook.Application.Mediator.Queries.Spoonacular
 {
-    public record GetRecipeDetailsQuery(int recipeID) : IRequest<DetailedRecipe>;
+    public record GetRecipeDetailsQuery(long recipeID) : IRequest<DetailedRecipe>;
 
 }

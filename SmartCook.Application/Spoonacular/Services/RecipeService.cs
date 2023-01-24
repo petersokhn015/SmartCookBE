@@ -28,14 +28,14 @@ namespace SmartCook.Application.Spoonacular.Services
             return _mediator.Send(new GetRecipesFromIngredientsQuery(ingredients));
         }
 
-        public Task<DetailedRecipe> GetRecipeDetails(int recipeId)
+        public Task<DetailedRecipe> GetRecipeDetails(long recipeId)
         {
             return _mediator.Send(new GetRecipeDetailsQuery(recipeId));
         }
 
-        public Task<List<Recipes>> GetRecommendedRecipes(int[] recipeIds)
+        public Task<List<Recipes>> GetRecommendedRecipes(string email)
         {
-            return _mediator.Send(new GetRecommendedRecipesQuery(recipeIds));
+            return _mediator.Send(new GetRecommendedRecipesQuery(email));
         }
 
         public Task<List<Recipes>> GetRecipesByTime(string tags)

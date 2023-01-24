@@ -10,14 +10,24 @@ using Newtonsoft.Json.Linq;
 using System.Security.Cryptography;
 using SmartCook.Domain.SpoonacularEntities;
 using SmartCook.Domain.SpoonacularEntities.RecipeDetails;
+using SmartCook.Application.DBManipulation.Interfaces;
+using SmartCook.Domain.DBEntities;
+using AutoMapper;
 
 namespace SmartCook.Infrastructure.Spoonacular.Repositories
 {
     public class RecipeRepository : IRecipeRepository
     {
         private HttpClient _client;
-        public RecipeRepository() 
+        private readonly IUserRepository _userRepository;
+        private readonly IPreferencesRepository _preferencesRepository;
+        private readonly IMapper _mapper;
+
+        public RecipeRepository(IUserRepository userRepository, IPreferencesRepository preferencesRepository, IMapper mapper)
         {
+            _userRepository = userRepository;
+            _preferencesRepository = preferencesRepository;
+            _mapper = mapper;
             _client = new HttpClient();
         }
 
@@ -145,7 +155,7 @@ namespace SmartCook.Infrastructure.Spoonacular.Repositories
             return recipes;
         }
 
-        public async Task<List<Recipes>> GetSimilarRecipe(int recipeId)
+        public async Task<List<Recipes>> GetSimilarRecipe(long recipeId)
         {
             List<Recipes> similarRecipes = new();
             try
@@ -159,7 +169,7 @@ namespace SmartCook.Infrastructure.Spoonacular.Repositories
                     {
                         if(recipe.Image == "")
                         {
-                            AnalysedRecipe recipeDetails = await GetRecipeInfo((int)recipe.Id);
+                            AnalysedRecipe recipeDetails = await GetRecipeInfo(recipe.Id);
                             recipe.Image = recipeDetails.Image;
                         }
                     }
@@ -189,46 +199,41 @@ namespace SmartCook.Infrastructure.Spoonacular.Repositories
             return newShuffledList;
         }
 
-        public async Task<List<Recipes>> GetRecommendedRecipes(int[] recipeIds)
+        public async Task<List<Recipes>> GetRecommendedRecipes(string email)
         {
             List<Recipes> RecommendedRecipes = new();
-            FoodPreferences preferences = new()
-            {
-                Diet="vegan",
-                Intolerances = new List<string>()
-                {
-                    "gluten",
-                    "egg"
-                },
-                CuisineTypes = new List<string>()
-                {
-                    "thai",
-                    "american"
-                }
-            };
+            User user = await _userRepository.GetUserByEmail(email);
+
+            FoodPreferences preferences = _mapper.Map<FoodPreferences>(user.UserPreferences);
 
             try
             {
-                foreach(int Id in recipeIds)
+                if(user.FavoriteRecipes.Count > 0)
                 {
-                    var similarRecipes = await GetSimilarRecipe(Id);
-                    similarRecipes.ForEach(similarRecipe => RecommendedRecipes.Add(similarRecipe));
+                    foreach (DBRecipe favoriteRecipe in user.FavoriteRecipes)
+                    {
+                        var similarRecipes = await GetSimilarRecipe(favoriteRecipe.SpoonacularRecipeId);
+                        similarRecipes.ForEach(similarRecipe => RecommendedRecipes.Add(similarRecipe));
+                    }
                 }
-
+                
                 var recipesByPreferences = await GetRecipesBasedOnPreferences(preferences);
                 recipesByPreferences.ForEach(recipeByPref => RecommendedRecipes.Add(recipeByPref));
 
-                RecommendedRecipes = ShuffleAndFixRecipeList(RecommendedRecipes);
+                if(RecommendedRecipes.Count > 0)
+                {
+                    RecommendedRecipes = ShuffleAndFixRecipeList(RecommendedRecipes);
+                }
                 return RecommendedRecipes;
             }
             catch(Exception e)
             {
                 Console.WriteLine(e.ToString());
+                return RecommendedRecipes;
             }
-            return RecommendedRecipes;
         }
 
-        public async Task<AnalysedRecipe> GetRecipeInfo(int recipeId)
+        public async Task<AnalysedRecipe> GetRecipeInfo(long recipeId)
         {
             AnalysedRecipe recipe = new();
             try
