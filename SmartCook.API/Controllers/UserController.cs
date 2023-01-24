@@ -95,7 +95,8 @@ namespace SmartCook.API.Controllers
         [HttpPost("UpdateUserInfo")]
         public async Task<ActionResult> UpdateUserInfo(string email, string username, IFormFile image)
         {
-            User user = await _userService.UpdateUserInfo(email, username, image);
+            UserDTO user = await _userService.UpdateUserInfo(email, username, image);
+
             if(user == null)
             {
                 return BadRequest("Couldn't update user information");

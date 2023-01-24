@@ -15,6 +15,6 @@ namespace SmartCook.Application.DBManipulation.Interfaces
         Task<bool> LoginUser(LoginUserDTO loginUserDTO);
         Task<bool> LogoutUser(string email);
         Task<bool> RegisterUser(RegisterUserDTO registerUserDTO);
-        Task<User> UpdateUserInfo(string email, string username, IFormFile image);
+        Task<UserDTO> UpdateUserInfo(string email, string username, IFormFile image);
     }
 }
