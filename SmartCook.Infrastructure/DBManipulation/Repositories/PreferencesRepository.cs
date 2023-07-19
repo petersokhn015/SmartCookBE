@@ -24,7 +24,7 @@ namespace SmartCook.Infrastructure.DBManipulation.Repositories
                 .Include(p => p.UserPreferences)
                 .FirstOrDefaultAsync(u => u.Email == email);
 
-            if (user == null || user.IsLoggedIn == false)
+            if (user == null)
             {
                 return null;
             }
@@ -38,7 +38,7 @@ namespace SmartCook.Infrastructure.DBManipulation.Repositories
                 .Include(p => p.UserPreferences)
                 .FirstOrDefaultAsync(u => u.Email == email);
 
-            if (user == null || user.IsLoggedIn == false) 
+            if (user == null) 
             {
                 return false;
             }

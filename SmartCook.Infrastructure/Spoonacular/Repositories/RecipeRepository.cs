@@ -104,12 +104,60 @@ namespace SmartCook.Infrastructure.Spoonacular.Repositories
             return recipes;
         }
 
-        public async Task<List<Recipes>> GetRecipesByCuisineType(string cuisineType)
+        public async Task<List<Recipes>> GetRecipesByCuisineType(string cuisineType, int limit, string email)
         {
             List<Recipes> recipes = new();
             try
             {
-                var response = await _client.GetAsync(new Uri(Constants.GetRecipesByCuisineType + cuisineType));
+                Preferences userPrefs = await _preferencesRepository.GetUserPreferences(email);
+                string url = $"{Constants.GetRecipesByCuisineType}{cuisineType}&diet={userPrefs.Diet}&intolerances={userPrefs.Intolerances}&number={limit}";
+                var response = await _client.GetAsync(new Uri(url));
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    var recipesData = JObject.Parse(apiResponse);
+                    var recipeList = recipesData["results"];
+                    recipes = recipeList?.ToObject<List<Recipes>>()!;
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            return recipes;
+        }
+
+        public async Task<List<Recipes>> SearchRecipeByCuisine(string cuisine)
+        {
+            List<Recipes> recipes = new();
+            try
+            {
+                string url = $"{Constants.GetRecipesByCuisineType}{cuisine}&number=15";
+                var response = await _client.GetAsync(new Uri(url));
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    var recipesData = JObject.Parse(apiResponse);
+                    var recipeList = recipesData["results"];
+                    recipes = recipeList?.ToObject<List<Recipes>>()!;
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            return recipes;
+        }
+
+        public async Task<List<Recipes>> SearchRecipe(string querySearch, int limit)
+        {
+            List<Recipes> recipes = new();
+            try
+            {
+                string url = $"{Constants.SearchRecipes}{querySearch}&number={limit}";
+                var response = await _client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();

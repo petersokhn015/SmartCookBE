@@ -13,7 +13,7 @@ namespace SmartCook.Application.DBManipulation.Interfaces
     {
         Task<User> GetUserByEmail(string email);
         Task<bool> LoginUser(User user);
-        Task<bool> LogoutUser(string email);
+        //Task<bool> LogoutUser(string email);
         Task<User> ModifyUserInfo(string email, string username, IFormFile image);
         Task<bool> RegisterUser(User user);
     }

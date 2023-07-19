@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SmartCook.Application.Mediator.Queries.Spoonacular
 {
-    public record GetRecipesByCuisineTypeQuery(string cuisineType) : IRequest<List<Recipes>>;
+    public record GetRecipesByCuisineTypeQuery(string cuisineType, int limit, string email) : IRequest<List<Recipes>>;
 
 }
 

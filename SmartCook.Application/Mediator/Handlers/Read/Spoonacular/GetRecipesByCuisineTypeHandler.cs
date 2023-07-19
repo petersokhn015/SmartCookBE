@@ -21,7 +21,7 @@ namespace SmartCook.Application.Mediator.Handlers.Read.Spoonacular
 
         public Task<List<Recipes>> Handle(GetRecipesByCuisineTypeQuery request, CancellationToken cancellationToken)
         {
-            return _repository.GetRecipesByCuisineType(request.cuisineType);
+            return _repository.GetRecipesByCuisineType(request.cuisineType, request.limit, request.email);
         }
     }
 }

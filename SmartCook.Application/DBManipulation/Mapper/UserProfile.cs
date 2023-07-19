@@ -16,6 +16,7 @@ namespace SmartCook.Application.DBManipulation.Mapper
             CreateMap<UserDTO, User>().ReverseMap();
             CreateMap<RegisterUserDTO, User>().ReverseMap();
             CreateMap<LoginUserDTO, User>().ReverseMap();
+            CreateMap<LoginUserDTO, RegisterUserDTO>().ReverseMap();
 
         }
     }

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "smart-cook-a7e42",
+  "private_key_id": "37f1addd74516f7d144ec528df51e4a646942fa0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDH5hULtIQ9sd4b\npWDsFjTOxU61sD5U5kWE9DZIJRxDLt/kpttdeGL4NtCmLd0jVvgAV3z4qMZRscjB\n+wFVke9Lx554tWqnzVmOWtgbigMvtQZdHNVLXj+0HAdPKnTjBdlyfAefCcB9GMws\nXPjMK5CgxKBZogVzZ7jaGiEuHAc5xSh3TPVDZNPsn/MyeLR4tsQRGygDAAJhrzpm\n93lXWh9/gVS/ck8xd1PlgqP6+QOSv31ycsYttYj05AHB704bJt1AcAbgsx87DJgb\njjgry9xF4lkCTTJ60s2hgFrf92bjbIaVHyU/x3SQSyzOX6hQTrE9MVVea1d0rs8p\nhIlyT4ZLAgMBAAECggEAE3ZL4kHcW4Kvvz1QvGuaZJntLzSjkkcryZAFS5eMCDZ4\nx0g/ifrTQptY9nT3V3N7iHz8G9xCwr1ucFnB0tT3LrJBXuXle8TlzT2nALdlLAXn\nQrWF8WU8X+AYDhXHdOWi5XSR7A1aV6j3Ep1SqSjXV0UNikHYtK21NPbfospJIc9A\niIDrAl3IBTBpWZD1cSmrGY0j17zaFm1LxIDqQ5QuhHcMr5tnsIiYVb/8ui67I3Pf\nunK98TBPEfgeR4yBNiO7ZckFiQSrQQav54qpM4dFbU2fK2IDXXhaxVmj95KhjxJc\n5QWDEqmlGDGse46EjBTXKMqxPp8F/iMuZhvZNhfnQQKBgQD/9prRwoUr+94IRngn\nWZJGEo9SrIT994rNZeHkiCDdgrHhxCPbPL81wHv8Nmoi2Cgir4Qc4M8VfUZD1lEQ\n/EwpudUNigAo+9OK3yKp/RjkLhfX04354F+oy2GkPGsqEz05uGlnR9cdN1vrVLAj\nyGZIsmMh1h+y/Uw8+PqgQ4XHmwKBgQDH7WtpQ0Tu46kgvRn5carcZAQ4pIdNJKZ9\nrQsJ6rPB3jOt4UcLndT/NfG4PMhwWvtekstyLTib3xuh2VFxaafmT9Yjz+I2uHiz\nOLupN20zPDuFPBLAC+Wj3zlvTuUS8Ejs+G5E4C9eM4LEg+qgHDhp68w4dGlOuIxb\nF3COB5yfEQKBgQDaMyNvxV85S5DPhSNQiC8FxTSgyajlx2xwBHY5F0LNEmkJiOb4\nMiTecaRAMTLxWUt9phn9dDeUniKUGdMpo6pZt61DyWyxg1umeulV+AiMHC7/Mb1K\nUle50Qb/tvG0AIqk9ewEu11J7rNRPfSZzHBFcKzJX3vOXdfr8mPU0zrsGQKBgQCQ\n5o+h1CKC7bfnxYas1uhaIZc5om15yOVuUtucTWIJUc2s6Yi/b54vdl6CBHPVkut6\n6PPRBdtwhWyWilZP157b+uMeQ44V0O+SHb1NcKGRr8cH0rlYPYcrlR8ggFLgvgxs\ny8XH36AVK0pMubt0Xd+5TTBPfnfQmUsIvl1SY0vtsQKBgQCDU39jhKffCrPgj04c\nnUHCtS7828XuGIPyJP2+xUtGLSCBqFI5OnDEzCnkQAPsTf4c1n/9U6q2uP012MdM\nbE5DPZ4b95z5cOYDhvK5s59EcdqE5TtPF753N+GlExrK2nVpIO008PrqC0yWhWyG\nTMct5shUp4VMnXj9DAdOA5PTsg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-e9eu9@smart-cook-a7e42.iam.gserviceaccount.com",
+  "client_id": "111464802650910551293",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-e9eu9%40smart-cook-a7e42.iam.gserviceaccount.com"
+}

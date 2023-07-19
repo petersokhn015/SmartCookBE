@@ -25,7 +25,7 @@ namespace SmartCook.Infrastructure.DBManipulation.Repositories
                 .Include(p => p.FavoriteRecipes)
                 .FirstOrDefaultAsync(u => u.Email == email);
 
-            if (user == null || user.IsLoggedIn == false)
+            if (user == null)
             {
                 return false;
             }
@@ -43,7 +43,7 @@ namespace SmartCook.Infrastructure.DBManipulation.Repositories
                 .Include(p => p.FavoriteRecipes)
                 .FirstOrDefaultAsync(u => u.Email == email);
 
-            if (user == null || user.IsLoggedIn == false) 
+            if (user == null) 
             {
                 return null;
             }
@@ -57,14 +57,21 @@ namespace SmartCook.Infrastructure.DBManipulation.Repositories
                 .Include(p => p.FavoriteRecipes)
                 .FirstOrDefaultAsync(u => u.Email == email);
 
-            if (user == null || user.IsLoggedIn == false)
+            if (user == null)
             {
                 return false;
             }
 
-            user.FavoriteRecipes.Remove(recipe);
-            await _context.SaveChangesAsync();
-            return true;
+            var recipeToRemove = user.FavoriteRecipes.FirstOrDefault(r => r.SpoonacularRecipeId == recipe.SpoonacularRecipeId);
+            if (recipeToRemove != null)
+            {
+                user.FavoriteRecipes.Remove(recipeToRemove);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
         }
+
     }
 }

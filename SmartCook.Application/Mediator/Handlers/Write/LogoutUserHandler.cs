@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace SmartCook.Application.Mediator.Handlers.Write
 {
-    public class LogoutUserHandler : IRequestHandler<LogoutUserCommand, bool>
-    {
-        private readonly IUserRepository _userRepository;
+    //public class LogoutUserHandler : IRequestHandler<LogoutUserCommand, bool>
+    //{
+    //    private readonly IUserRepository _userRepository;
 
-        public LogoutUserHandler(IUserRepository userRepository)
-        {
-            _userRepository = userRepository;
-        }
+    //    public LogoutUserHandler(IUserRepository userRepository)
+    //    {
+    //        _userRepository = userRepository;
+    //    }
 
-        public Task<bool> Handle(LogoutUserCommand request, CancellationToken cancellationToken)
-        {
-            return _userRepository.LogoutUser(request.email);
-        }
-    }
+    //    public Task<bool> Handle(LogoutUserCommand request, CancellationToken cancellationToken)
+    //    {
+    //        return _userRepository.LogoutUser(request.email);
+    //    }
+    //}
 }

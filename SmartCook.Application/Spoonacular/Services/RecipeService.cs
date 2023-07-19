@@ -42,9 +42,19 @@ namespace SmartCook.Application.Spoonacular.Services
         {
             return _mediator.Send(new GetRecipesByTimeQuery(userTime));
         }
-        public Task<List<Recipes>> GetRecipesByCuisineType(string tags)
+
+        public Task<List<Recipes>> SearchRecipe(string querySearch, int limit)
         {
-            return _mediator.Send(new GetRecipesByCuisineTypeQuery(tags));
+            return _mediator.Send(new GetSearchRecipeQuery(querySearch,limit));
+        }
+
+        public Task<List<Recipes>> SearchRecipeByCuisine(string cuisine)
+        {
+            return _mediator.Send(new GetSearchRecipeByCuisineQuery(cuisine));
+        }
+        public Task<List<Recipes>> GetRecipesByCuisineType(string tags, int limit, string email)
+        {
+            return _mediator.Send(new GetRecipesByCuisineTypeQuery(tags, limit, email));
         }
     }
 }

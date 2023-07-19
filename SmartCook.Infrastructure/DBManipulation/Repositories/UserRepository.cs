@@ -26,12 +26,12 @@ namespace SmartCook.Infrastructure.DBManipulation.Repositories
 
         public async Task<User> GetUserByEmail(string email)
         {
-            if(_context.Users.Where(u => u.Email == email && u.IsLoggedIn == true).Any())
+            if(_context.Users.Where(u => u.Email == email).Any())
             {
                 User? user = await _context.Users
                     .Include(p => p.UserPreferences)
                     .Include(f => f.FavoriteRecipes)
-                    .FirstOrDefaultAsync(u => u.Email == email && u.IsLoggedIn == true);
+                    .FirstOrDefaultAsync(u => u.Email == email);
                 return user!;
             }
             return null;
@@ -39,31 +39,26 @@ namespace SmartCook.Infrastructure.DBManipulation.Repositories
 
         public async Task<bool> LoginUser(User user)
         {
-            if (!await _context.Users.Where(u => u.Email == user.Email && u.Password == user.Password).AnyAsync())
+            if (!await _context.Users.Where(u => u.Email == user.Email).AnyAsync())
             {
                 return false;
             }
-
-            User? loginUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email && u.Password == user.Password);
-            loginUser!.IsLoggedIn = true;
-            _context.Users.Update(loginUser);
-            await _context.SaveChangesAsync();
             return true;
         }
 
-        public async Task<bool> LogoutUser(string email)
-        {
-            if (!await _context.Users.Where(u => u.Email == email).AnyAsync())
-            {
-                return false;
-            }
+        //public async Task<bool> LogoutUser(string email)
+        //{
+        //    if (!await _context.Users.Where(u => u.Email == email).AnyAsync())
+        //    {
+        //        return false;
+        //    }
 
-            User? logoutUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-            logoutUser!.IsLoggedIn = false;
-            _context.Users.Update(logoutUser);
-            await _context.SaveChangesAsync();
-            return true;
-        }
+        //    User? logoutUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        //    logoutUser!.IsLoggedIn = false;
+        //    _context.Users.Update(logoutUser);
+        //    await _context.SaveChangesAsync();
+        //    return true;
+        //}
 
         public async Task<User> ModifyUserInfo(string email, string username, IFormFile image)
         {
@@ -92,12 +87,10 @@ namespace SmartCook.Infrastructure.DBManipulation.Repositories
 
         public async Task<bool> RegisterUser(User user)
         {
-            if(await _context.Users.Where(u => u.Email == user.Email && u.Password == user.Password).AnyAsync())
+            if (await _context.Users.Where(u => u.Email == user.Email).AnyAsync())
             {
                 return false;
             }
-
-            user.IsLoggedIn = false;
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
             return true;
